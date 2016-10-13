@@ -3,7 +3,17 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'team-timezone',
+    torii: {
+      sessionServiceName: 'session'
+    },
     environment: environment,
+    firebase: {
+      apiKey: "AIzaSyDG9Q6NXO299UBU-rJJSbRijcsD-KOTKXk",
+      authDomain: "teamtimezonegb.firebaseapp.com",
+      databaseURL: "https://teamtimezonegb.firebaseio.com",
+      storageBucket: "teamtimezonegb.appspot.com",
+      messagingSenderId: "191540648722"
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

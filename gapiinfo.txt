@@ -1,0 +1,3 @@
+clientID: 191540648722-arql4hrjkn1jfu89m2bidqdv379oq293.apps.googleusercontent.com
+
+client secret: ZJ8c9t_t0yTsHYBX2d38JdML
