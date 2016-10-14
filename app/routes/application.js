@@ -10,12 +10,7 @@ export default Ember.Route.extend({
         provider: "google",
         settings: {scope: 'profile'}
       }).then((data) => {
-        window.this = this.get('session'); 
-          let newUser = this.store.createRecord('user', {
-            name: data.currentUser.displayName,
-            photoUrl: data.currentUser.photoURL
-          });
-          newUser.save();
+        window.currentUser = data.currentUser;
       });
     },
     signOut: function() {

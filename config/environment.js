@@ -7,6 +7,7 @@ module.exports = function(environment) {
       sessionServiceName: 'session'
     },
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
     firebase: {
       apiKey: "AIzaSyDG9Q6NXO299UBU-rJJSbRijcsD-KOTKXk",
       authDomain: "teamtimezonegb.firebaseapp.com",
