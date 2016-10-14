@@ -10,10 +10,12 @@ export default Ember.Route.extend({
         provider: "google",
         settings: {scope: 'profile'}
       }).then((data) => {
-        window.currentUser = data.currentUser;
+        this.transitionTo('users');
       });
     },
     signOut: function() {
+      this.transitionTo('home');
+      this.store.unloadAll();
       this.get('session').close();
     }
   }

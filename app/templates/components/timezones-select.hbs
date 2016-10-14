@@ -1,7 +1,7 @@
 {{#power-select
   options=timezones
-  selected=destination
-  onchange=(action "test")
+  selected=timezone
+  onchange=(action "chooseTimezone")
   searchField="timezone"
   searchPlaceholder="What timezone are you in?" as |timezone|}}
   {{timezone.timezone}}

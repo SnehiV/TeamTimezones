@@ -1,8 +1,22 @@
 <div>
-  {{#timezones-select}}
-  {{/timezones-select}}
-  {{#each-in model as |idx name|}}
-    <p>{{name}}</p>
+  {{#power-select
+    options=timezones
+    selected=timezone
+    onchange=(action "chooseTimezone")
+    searchField="timezone"
+    searchPlaceholder="What timezone are you in?" as |timezone|}}
+    {{timezone.timezone}}
+  {{/power-select}}
+  {{yield}}
+  {{#each-in model as |timezone members|}}
+    <div>{{timezone}}
+      {{#each members as |member|}}
+        <div>
+          <img src="{{member.photoUrl}}">
+          <strong>{{member.name}}</strong>
+        </div>
+      {{/each}}
+    </div>
   {{/each-in}}
 </div>
 {{outlet}}
