@@ -9,7 +9,7 @@ export default Ember.Route.extend({
       this.get('session').open('firebase', {
         provider: "google",
         settings: {scope: 'profile'}
-      }).then((data) => {
+      }).then(() => {
         this.transitionTo('users');
       });
     },

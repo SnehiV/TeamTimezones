@@ -8,9 +8,9 @@
     {{timezone.timezone}}
   {{/power-select}}
   {{yield}}
-  {{#each-in model as |timezone members|}}
-    <div>{{timezone}}
-      {{#each members as |member|}}
+  {{#each-in model as |timezone data|}}
+    <div>{{timezone}}{{data.offset}}{{iso-date offset=data.offset}}
+      {{#each data.userData as |member|}}
         <div>
           <img src="{{member.photoUrl}}">
           <strong>{{member.name}}</strong>

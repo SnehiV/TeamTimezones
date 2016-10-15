@@ -8,8 +8,10 @@ export default Ember.Route.extend({
         let name = user._data.name;
         let photoUrl = user._data.photoUrl;
         let offset = user._data.offset;
-        if (userTimezones[timezone] === undefined){userTimezones[timezone] = [];}
-        userTimezones[timezone].push({name: name, offset: offset, photoUrl: photoUrl});
+        if (userTimezones[timezone] === undefined){
+          userTimezones[timezone] = {userData: [], offset: offset};
+        }
+        userTimezones[timezone].userData.push({name: name, photoUrl: photoUrl});
       });
       return userTimezones;
     };
