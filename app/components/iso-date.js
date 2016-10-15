@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
   iso: Ember.computed('clock.date', function() {
     let offset = Math.round(parseFloat(this.get('offset')));
+    let dayString = this.get('clock.date').toString().slice(0, 3);
     let timeString = this.get('clock.date').toISOString().slice(11, 16);
     let hour = parseInt(timeString.slice(0, 2));
     let minute = timeString.slice(3);
@@ -18,7 +19,7 @@ export default Ember.Component.extend({
     } else {
       ampm = 'AM';
     }
-    let displayTime = displayHour.toString() + ':' + minute + ampm;
+    let displayTime = dayString + "," + " " + displayHour.toString() + ':' + minute + ampm;
     return displayTime;
   }),
 });

@@ -1,18 +1,26 @@
-<div>
-  {{#power-select
-    options=timezones
-    selected=timezone
-    onchange=(action "chooseTimezone")
-    searchField="timezone"
-    searchPlaceholder="What timezone are you in?" as |timezone|}}
-    {{timezone.timezone}}
-  {{/power-select}}
+<div class='content'>
+  <div class='timezone-search'> What timezone are you in?
+    {{#power-select
+      options=timezones
+      selected=timezone
+      onchange=(action "chooseTimezone")
+      searchField="timezone"
+      searchPlaceholder="Search timezones..." as |timezone|}}
+      {{timezone.timezone}}
+    {{/power-select}}
+  </div>
   {{yield}}
   {{#each-in model as |timezone data|}}
-    <div>{{timezone}}{{data.offset}}{{iso-date offset=data.offset}}
+    <div class='timezone'>
+      <div class="timezone-header">
+        <div class="timezone-name">{{timezone}}</div>
+        <div class="time">{{iso-date offset=data.offset}}</div>
+      </div>
       {{#each data.userData as |member|}}
-        <div>
-          <img src="{{member.photoUrl}}">
+        <div class='team-member'>
+          <div class="image-container">
+            <img class='profile-pic' src="{{member.photoUrl}}">
+          </div>
           <strong>{{member.name}}</strong>
         </div>
       {{/each}}

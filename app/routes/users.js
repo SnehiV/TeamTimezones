@@ -13,6 +13,7 @@ export default Ember.Route.extend({
         }
         userTimezones[timezone].userData.push({name: name, photoUrl: photoUrl});
       });
+      console.log(userTimezones);
       return userTimezones;
     };
     let reject = () => {};

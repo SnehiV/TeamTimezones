@@ -3,17 +3,6 @@ import timezones from '../util/timezoneList';
 
 export default Ember.Controller.extend({
   timezones: timezones,
-  timezone: timezones[138],
-  clock: Ember.inject.service('my-shiny-new-clock'),
-
-  iso: Ember.computed('clock.date', function() {
-    return this.get('clock.date').toISOString().slice(11, 16);
-  }),
-  time(offset){
-    let time = Ember.computed('iso', function() {
-      return this.get('iso') + offset;
-    });
-  },
   actions: {
     chooseTimezone(selectedTimezone) {
       this.set('timezone', selectedTimezone);
