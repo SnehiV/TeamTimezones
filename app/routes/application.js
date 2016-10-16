@@ -11,7 +11,7 @@ export default Ember.Route.extend({
         provider: "google",
         settings: {scope: 'profile'}
       }).then(() => {
-        this.transitionTo('users');
+        this.transitionTo('home');
       });
     },
     signOut: function() {
