@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  // emberfire google authentication using the torii adapter
   beforeModel: function() {
     return this.get('session').fetch().catch(function() {});
   },
@@ -14,9 +15,8 @@ export default Ember.Route.extend({
       });
     },
     signOut: function() {
-      this.transitionTo('home');
       this.store.unloadAll();
-      this.get('session').close();
+      this.get('session').close().then(() => (this.transitionTo('index')));
     }
   }
 });

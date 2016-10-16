@@ -3,9 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   beforeModel() {
     this._super(...arguments);
-    this.replaceWith('home');
+    if (this.get('session.isAuthenticated')){
+      this.replaceWith('users');
+    }
   }
-  // afterModel(model, transition){
-  //   if (this.get('session').content.curren)
-  // }
 });

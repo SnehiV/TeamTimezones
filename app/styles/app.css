@@ -42,6 +42,7 @@ strong {
 
 .team-member {
     display: flex;
+    margin-bottom: 10px;
 }
 
 .timezone-header {
@@ -62,4 +63,56 @@ strong {
 
 body.ember-application {
     background-color: aliceblue;
+}
+
+.auth-buttons {
+    padding: 30px;
+    font-family: sans-serif;
+}
+
+#logged-in-text {
+    padding: 10px;
+}
+
+img.top-profile-pic {
+    width: 50px;
+    height: 50px;
+}
+
+.timezone-search {
+    width: 90%;
+    font-family: sans-serif;
+    font-size: medium;
+    color: gray;
+}
+
+div#currentUser-info {
+    display: flex;
+}
+
+.logged-in-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 30px;
+    color: gray;
+    font-size: smaller;
+}
+
+button {font-family: sans-serif;margin: 10px 0 10px 0;padding: 5px;background-color: transparent;}
+
+.sign-in {
+    background-image: url('https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png');
+    background-position: center;
+    width: 191px;
+    height: 46px;
+}
+
+h1 {font-family: sans-serif;font-weight: lighter;font-size: -webkit-xxx-large;color: gray;padding: 30px;}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 15%;
 }
