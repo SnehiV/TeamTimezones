@@ -1,7 +1,7 @@
 import Ember from 'ember';
 export default Ember.Route.extend({
-  // Extracting data from the databse so the users route model is a POJO.
-  // This allows for the users template to iterate through the data by timezone
+  // Extracting data from the databse so the home route model is a POJO.
+  // This allows for the home template to iterate through the data by timezone
   // and users in that timezones.
   model(){
     let fufill = (users) => {
@@ -14,6 +14,7 @@ export default Ember.Route.extend({
         // setting up the model object to have recorded timezones as keys
         // the template will iterate over the timezones and then the user data
         // the timezone offset is passed to the clock component
+        console.log(offset);
         if (userTimezones[timezone] === undefined){
           userTimezones[timezone] = {userData: [], offset: offset};
         }
