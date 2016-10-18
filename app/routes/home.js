@@ -14,7 +14,6 @@ export default Ember.Route.extend({
         // setting up the model object to have recorded timezones as keys
         // the template will iterate over the timezones and then the user data
         // the timezone offset is passed to the clock component
-        console.log(offset);
         if (userTimezones[timezone] === undefined){
           userTimezones[timezone] = {userData: [], offset: offset};
         }

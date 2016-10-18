@@ -31,17 +31,20 @@ export default Ember.Component.extend({
     let minute = timeString.slice(3);
     let ampm = "";
     let displayHour = hour + offset;
+    
     if ((offset > 0) && (displayHour < 12)) {
       ampm = "AM";
     } else if ((offset > 0) && (displayHour >= 12)) {
       ampm = "PM";
     }
 
-    if ((offset < 0) && (displayHour <= 0)) {
+
+    if ((offset < 0) && (displayHour >= 12)) {
       ampm = 'PM';
-    } else if ((offset < 0) && (displayHour > 0)){
+    } else if ((offset < 0) && (displayHour < 12 )){
       ampm = "AM";
     }
+
     if (displayHour === 0){
       displayHour = 12;
     } else if (displayHour < 0){
